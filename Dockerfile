@@ -14,8 +14,6 @@ RUN CGO_ENABLED=0 GOOS=linux go build -o /output
 
 
 FROM alpine:latest
-ARG KUBECONFIG
-ENV KUBECONFIG=$KUBECONFIG
 
 WORKDIR /app
 
