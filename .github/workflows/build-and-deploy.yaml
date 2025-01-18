@@ -58,4 +58,4 @@ jobs:
           passphrase: ${{ secrets.SSH_PASSPHRASE }}
           key: ${{ secrets.SSH_KEY }}
           script: |
-            kubectl deployment restart k8s-ingressor
+            kubectl rollout restart deployment k8s-ingressor-deploy
