@@ -46,7 +46,7 @@ func Post(w http.ResponseWriter, r *http.Request) {
 					Ports: []corev1.ContainerPort{
 						{
 							Name:          "port-0",
-							ContainerPort: 8000,
+							ContainerPort: 3000,
 							Protocol:      corev1.ProtocolTCP,
 						},
 					},
@@ -151,9 +151,9 @@ func Post(w http.ResponseWriter, r *http.Request) {
 			Ports: []corev1.ServicePort{
 				{
 					Name:       fmt.Sprintf("%s-port", typeName),
-					Port:       8000,
+					Port:       3000,
 					Protocol:   corev1.ProtocolTCP,
-					TargetPort: intstr.IntOrString{Type: intstr.Int, IntVal: 8000},
+					TargetPort: intstr.IntOrString{Type: intstr.Int, IntVal: 3000},
 				},
 			},
 			Type: corev1.ServiceTypeClusterIP,
@@ -192,7 +192,7 @@ func Post(w http.ResponseWriter, r *http.Request) {
 										Service: &v1.IngressServiceBackend{
 											Name: s.Name,
 											Port: v1.ServiceBackendPort{
-												Number: 8000,
+												Number: 3000,
 											},
 										},
 									},
